@@ -4,8 +4,8 @@
   "homepage": "https:///Chloe-Wu.github.io/i-see-admin",
   "private": true,
   "scripts": {
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build -b master",
+    "export": "next export",
+    "deploy": "yarn build && yarn export && gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

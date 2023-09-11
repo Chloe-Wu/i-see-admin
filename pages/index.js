@@ -44,7 +44,7 @@ export default function Home() {
             <br/>
             <p>Welcome to the I-SEE Admin Panel! As an administrator, you have the power to effortlessly manage inventory, <b>update product & category information, and monitor order details.</b></p>
             <br/>
-            <p>It's simple – just navigate to the 'Products' or 'Categories' link in the navbar to add or edit information. Every edit you make here will seamlessly reflect on the I-SEE website. Plus, you can easily keep track of customer orders right here in the admin dashboard. Explore the full potential of I-SEE Admin and keep I-SEE's e-commerce website running smoothly!</p>
+            <p>It&apos;s simple – just navigate to the &apos; Products &apos; or &apos;Categories&apos; link in the navbar to add or edit information. Every edit you make here will seamlessly reflect on the I-SEE website. Plus, you can easily keep track of customer orders right here in the admin dashboard. Explore the full potential of I-SEE Admin and keep I-SEE&apos;s e-commerce website running smoothly!</p>
             <br/>
             <p>I-See Ecommerse website: <a className="text-primary" href="https://i-see-front.vercel.app/" target="_blank">https://i-see-front.vercel.app/</a></p>
       </div>

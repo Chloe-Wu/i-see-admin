@@ -42,7 +42,7 @@ export default function Layout({children}) {
 
   if(!session) {
     return (
-      <div className="w-screen h-screen flex items-center justify-center bg-highlight">
+      <div className="w-screen h-screen flex items-center justify-center bg-login">
       <div className="w-1/2 h-1/2 shadow-lg bg-bgGray rounded-lg flex items-center flex-col justify-center">
       <h1>Sign in</h1>
       <div className="flex flex-start flex-col justify-start gap-2">
@@ -81,7 +81,7 @@ export default function Layout({children}) {
   )
   }
   return (
-    <div className="bg-bgGray min-h-screen ">
+    <div className="bg-bgGray min-h-screen">
       <div className="block md:hidden flex items-center p-4">
         <button onClick={() => setShowNav(true)}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -97,7 +97,7 @@ export default function Layout({children}) {
 
       <div className="flex">
         <Nav show = {showNav} />
-        <div className="flex-grow p-4">{children}</div>
+        <div className="flex-grow p-8">{children}</div>
       </div>
     </div>
   )

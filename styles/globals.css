@@ -52,3 +52,6 @@ table.basic a{
 .btn-default:hover{
     @apply bg-primary text-white;
 }
+.bg-login{
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}

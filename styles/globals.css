@@ -43,6 +43,12 @@ table.basic a{
 .btn-red{
     @apply bg-red-200 text-red-600 px-4 py-1 rounded-md;
 }
+.btn-red:hover{
+    @apply bg-red-400 text-white;
+}
 .btn-default{
     @apply bg-white text-gray-800 px-4 py-1 rounded-md border border-gray-200 shadow-sm;
+}
+.btn-default:hover{
+    @apply bg-primary text-white;
 }

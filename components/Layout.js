@@ -3,18 +3,81 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Nav from '@/components/Nav';
 import {useState} from 'react';
 import Logo from "./Logo";
+import Link from "next/link";
+
+
+
 
 export default function Layout({children}) {
   const {data:session} = useSession();
+
+
   const [showNav, setShowNav] = useState(false);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignIn = async () => {
+    const result = await signIn('credentials', {
+      redirect: false,
+      email,
+      password,
+    });
+
+    
+    if (result.error) {
+      // Handle authentication error
+      console.error('Authentication error:', result.error);
+      return(
+        alert("Please use the provided account to login. \n Account:jsmith@gmail.com \n Email:123")
+      )
+    } else {
+      // Authentication successful
+      console.log('Authentication successful');
+
+  console.log("session",session);
+      // You can redirect the user or perform other actions
+    }
+  };
 
   if(!session) {
     return (
-      <div className="w-screen h-screen bg-bgGray flex items-center">
-      <div className="text-center w-full">
-        <button onClick={()=>signIn('google')} className="bg-white p-2 rounded-lg px-4"> Login with Google</button>
+      <div className="w-screen h-screen flex items-center justify-center bg-highlight">
+      <div className="w-1/2 h-1/2 shadow-lg bg-bgGray rounded-lg flex items-center flex-col justify-center">
+      <h1>Sign in</h1>
+      <div className="flex flex-start flex-col justify-start gap-2">
+        <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          placeholder="jsmith@gmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            placeholder="123"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+        {/* Use onClick event to trigger sign-in */}
+        <button className = "btn-default w-full" onClick={handleSignIn}>Continue</button>
       </div>
-     </div>
+        </div>
+    </div>
+    </div>
+    //   <div className="w-screen h-screen bg-bgGray flex items-center">
+    //   <div className="text-center w-full">
+    //     <button onClick={()=>signIn('google')} className="bg-white p-2 rounded-lg px-4"> Login with Google</button>
+    //   </div>
+    //  </div>
   )
   }
   return (
